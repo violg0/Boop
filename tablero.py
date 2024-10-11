@@ -217,6 +217,7 @@ class MatrizBoop:
         except AttributeError:
             pass
 
+<<<<<<< HEAD
         self.mover_filas_columnas(fila, columna, fila_actual)
 
     def mover_filas_columnas(self, fila, columna, fila_actual) -> None:
@@ -298,6 +299,8 @@ class MatrizBoop:
 
 
 
+=======
+>>>>>>> 6342fe119af237a93bd647b1f4a5940789a06aad
 
 
     def verificar_condicion(self)-> bool:
