@@ -118,56 +118,56 @@ class MatrizBoop:
 
         nodo_actual = fila_actual.gato.buscar_indice(columna-1)
 
-        try:
-            if nodo_actual.arriba and nodo_actual.arriba.gato is not None:
-                nodo_actual.arriba.mover_gato()
+        #try:
+            #if nodo_actual.arriba and nodo_actual.arriba.gato is not None:
+                #nodo_actual.arriba.mover_gato()
 
-                if nodo_actual.arriba.arriba:
-                    if nodo_actual.arriba.arriba.gato is not None:
-                        nodo_actual.arriba.agregar_gato()
-                    else:
-                        nodo_actual.arriba.arriba.agregar_gato()
+                #if nodo_actual.arriba.arriba:
+                    #if nodo_actual.arriba.arriba.gato is not None:
+                        #nodo_actual.arriba.agregar_gato()
+                    #else:
+                        #nodo_actual.arriba.arriba.agregar_gato()
 
-        except AttributeError:
-            pass
+        #except AttributeError:
+            #pass
 
 
-        try:
-            if nodo_actual.abajo and nodo_actual.abajo.gato is not None:
-                nodo_actual.abajo.mover_gato()
+        #try:
+         #   if nodo_actual.abajo and nodo_actual.abajo.gato is not None:
+          #      nodo_actual.abajo.mover_gato()
 
-                if nodo_actual.abajo.abajo:
-                    if nodo_actual.abajo.abajo.gato is not None:
-                        nodo_actual.abajo.agregar_gato()
-                    else:
-                        nodo_actual.abajo.abajo.agregar_gato()
-        except AttributeError:
-            pass
+            #    if nodo_actual.abajo.abajo:
+             #       if nodo_actual.abajo.abajo.gato is not None:
+              #          nodo_actual.abajo.agregar_gato()
+               #     else:
+                #        nodo_actual.abajo.abajo.agregar_gato()
+       # except AttributeError:
+        #    pass
 
-        try:
-            if nodo_actual.izquierda and nodo_actual.izquierda.gato is not None:
-                nodo_actual.izquierda.mover_gato()
+        #try:
+         #   if nodo_actual.izquierda and nodo_actual.izquierda.gato is not None:
+          #      nodo_actual.izquierda.mover_gato()
 
-                if nodo_actual.izquierda.izquierda:
-                    if nodo_actual.izquierda.izquierda.gato is not None:
-                        nodo_actual.izquierda.agregar_gato()
-                    else:
-                        nodo_actual.izquierda.izquierda.agregar_gato()
+           #     if nodo_actual.izquierda.izquierda:
+            #        if nodo_actual.izquierda.izquierda.gato is not None:
+                 #       nodo_actual.izquierda.agregar_gato()
+                  #  else:
+                   #     nodo_actual.izquierda.izquierda.agregar_gato()
 
-        except AttributeError:
-            pass
+      #  except AttributeError:
+        #    pass
 
-        try:
-            if nodo_actual.derecha and nodo_actual.derecha.gato is not None:
-                nodo_actual.derecha.mover_gato()
+       # try:
+        #    if nodo_actual.derecha and nodo_actual.derecha.gato is not None:
+           #     nodo_actual.derecha.mover_gato()
 
-                if nodo_actual.derecha.derecha:
-                    if nodo_actual.derecha.derecha.gato is not None:
-                        nodo_actual.derecha.agregar_gato()
-                    else:
-                        nodo_actual.derecha.derecha.agregar_gato()
-        except AttributeError:
-            pass
+            #    if nodo_actual.derecha.derecha:
+             #       if nodo_actual.derecha.derecha.gato is not None:
+              #          nodo_actual.derecha.agregar_gato()
+                  #  else:
+                    #    nodo_actual.derecha.derecha.agregar_gato()
+        #except AttributeError:
+         #   pass
 
         try:
             if nodo_actual.diagonal_izq_sup and nodo_actual.diagonal_izq_sup.gato is not None:
@@ -217,15 +217,17 @@ class MatrizBoop:
         except AttributeError:
             pass
 
-<<<<<<< HEAD
+
         self.mover_filas_columnas(fila, columna, fila_actual)
 
     def mover_filas_columnas(self, fila, columna, fila_actual) -> None:
         nodo_actual = fila_actual.gato.buscar_indice(columna-1)
+        print("nodo actual", columna-1)
         i = 0
         while nodo_actual is not None:
             if nodo_actual.derecha and nodo_actual.derecha.gato is not None:
                 nodo_actual.derecha.mover_gato()
+                print("no deberia ejecutarse")
 
                 if nodo_actual.derecha.derecha:
                     if nodo_actual.derecha.derecha.gato is not None:
@@ -238,7 +240,11 @@ class MatrizBoop:
             else:
                 nodo_actual = nodo_actual.derecha
 
+            i+=1
+
         nodo_actual = fila_actual.gato.buscar_indice(columna-1)
+
+
 
         while nodo_actual is not None:
             if nodo_actual.izquierda and nodo_actual.izquierda.gato is not None:
@@ -264,15 +270,16 @@ class MatrizBoop:
 
                 if nodo_actual.abajo.abajo:
                     if nodo_actual.abajo.abajo.gato is not None:
-                        nodo_actual.gato.agregar_gato()
-                        nodo_actual= nodo_actual.abajo
+                        nodo_actual.abajo.agregar_gato()
+                        nodo_actual = nodo_actual.abajo
                     else:
                         nodo_actual.abajo.abajo.agregar_gato()
-                        nodo_actual= nodo_actual.abajo.abajo
+                        nodo_actual = nodo_actual.abajo.abajo
+                else:
+                    print("no haya abajo")
+                    break
             else:
-                nodo_actual= nodo_actual.abajo
-
-
+                nodo_actual = nodo_actual.abajo
 
 
         nodo_actual = fila_actual.gato.buscar_indice(columna-1)
@@ -294,13 +301,6 @@ class MatrizBoop:
             i += 1
 
 
-
-
-
-
-
-=======
->>>>>>> 6342fe119af237a93bd647b1f4a5940789a06aad
 
 
     def verificar_condicion(self)-> bool:
