@@ -15,17 +15,19 @@ def juego():
             try:
                 coordenadas = input("Ingrese las coordenadas: ")
 
+
                 fila, columna = map(int, coordenadas.split(","))
 
-                tablero.colocar_gato(fila, columna)
-                tablero.mostrar_matriz()
+                if not fila > tablero.size and not columna > tablero.size:
+                    tablero.colocar_gato(fila, columna)
+                    tablero.mostrar_matriz()
 
-                if tablero.verificar_condicion() == True:
-                    print("Ganaste!")
-                    break
+                    if tablero.verificar_condicion() == True:
+                        print("Ganaste!")
+                        break
 
             except (ValueError):
-                print("Debe poner las coordenadas, no un solo numero")
+                print("Debe poner las coordenadas, x,y ")
 
 
 

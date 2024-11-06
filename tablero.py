@@ -227,7 +227,6 @@ class MatrizBoop:
         while nodo_actual is not None:
             if nodo_actual.derecha and nodo_actual.derecha.gato is not None:
                 nodo_actual.derecha.mover_gato()
-                print("no deberia ejecutarse")
 
                 if nodo_actual.derecha.derecha:
                     if nodo_actual.derecha.derecha.gato is not None:
@@ -276,7 +275,7 @@ class MatrizBoop:
                         nodo_actual.abajo.abajo.agregar_gato()
                         nodo_actual = nodo_actual.abajo.abajo
                 else:
-                    print("no haya abajo")
+                    print("no hay abajo")
                     break
             else:
                 nodo_actual = nodo_actual.abajo
